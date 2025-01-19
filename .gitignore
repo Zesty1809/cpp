@@ -1,2 +1,6 @@
 .clang-format
 .vscode
+src/CMakeLists.txt
+CMakeLists.txt
+build/
+debug/
