@@ -33,13 +33,18 @@ int main(int argc, char* args[]) {
     } else {
       // Apply the image
       SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
-      
+
       // Update the surface
       SDL_UpdateWindowSurface(gWindow);
 
       // Hack to get the window stay up
+
+      // Event handler
       SDL_Event e;
+
+      // Main loop flag
       bool quit = false;
+
       while (quit == false) {
         while (SDL_PollEvent(&e)) {
           if (e.type == SDL_QUIT) quit = true;
@@ -65,8 +70,8 @@ bool init() {
   } else {
     // Create window
     gWindow = SDL_CreateWindow("SDL Application", SDL_WINDOWPOS_UNDEFINED,
-                               SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT,
-                               SDL_WINDOW_SHOWN);
+                               SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
+                               SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
     if (gWindow == NULL) {
       printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
