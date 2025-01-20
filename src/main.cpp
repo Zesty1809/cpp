@@ -47,13 +47,13 @@ int main(int argc, char* args[]) {
             quit = true;
           }
         }
-      }
 
-      // Apply the image
+        // Apply the image
       SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
 
       // Update the surface
       SDL_UpdateWindowSurface(gWindow);
+      }
     }
   }
 
@@ -94,10 +94,10 @@ bool loadMedia() {
   bool success = true;
 
   // Load splash image
-  gHelloWorld = SDL_LoadBMP("/home/zesty/coding/cpp/src/hello_world.bmp");
+  gHelloWorld = SDL_LoadBMP("/home/zesty/coding/cpp/src/helloWorld.bmp");
 
   if (gHelloWorld == NULL) {
-    printf("Unable to load image %s! SDL_Error: %s\n", "hello_world.bmp",
+    printf("Unable to load image %s! SDL_Error: %s\n", "helloWorld.bmp",
            SDL_GetError());
 
     success = false;
