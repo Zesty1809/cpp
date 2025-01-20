@@ -94,7 +94,7 @@ bool loadMedia() {
   bool success = true;
 
   // Load splash image
-  gHelloWorld = SDL_LoadBMP("/home/zesty/coding/cpp/src/helloWorld.bmp");
+  gHelloWorld = SDL_LoadBMP("./src/resources/helloWorld.bmp");
 
   if (gHelloWorld == NULL) {
     printf("Unable to load image %s! SDL_Error: %s\n", "helloWorld.bmp",
