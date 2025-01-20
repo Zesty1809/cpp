@@ -49,10 +49,10 @@ int main(int argc, char* args[]) {
         }
 
         // Apply the image
-      SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
+        SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
 
-      // Update the surface
-      SDL_UpdateWindowSurface(gWindow);
+        // Update the surface
+        SDL_UpdateWindowSurface(gWindow);
       }
     }
   }
