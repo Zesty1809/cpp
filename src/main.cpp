@@ -31,12 +31,6 @@ int main(int argc, char* args[]) {
     if (!loadMedia()) {
       printf("Failed to load media!\n");
     } else {
-      // Apply the image
-      SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
-
-      // Update the surface
-      SDL_UpdateWindowSurface(gWindow);
-
       // Hack to get the window stay up
 
       // Event handler
@@ -45,11 +39,21 @@ int main(int argc, char* args[]) {
       // Main loop flag
       bool quit = false;
 
-      while (quit == false) {
-        while (SDL_PollEvent(&e)) {
-          if (e.type == SDL_QUIT) quit = true;
+      while (!quit) {
+        // Handle event on queue
+        while (SDL_PollEvent(&e) != 0) {
+          // User requests quit
+          if (e.type == SDL_QUIT) {
+            quit = true;
+          }
         }
       }
+
+      // Apply the image
+      SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
+
+      // Update the surface
+      SDL_UpdateWindowSurface(gWindow);
     }
   }
 
