@@ -1,8 +1,8 @@
 #include <iostream>
+#include <limits>
 
 int main() {
-  char c;
-  std::cin >> c;
-  std::cout << "The value of " << c << " is " << int(c) << '\n';
-  return 0;
+  std::cout << "largest float == " << std::numeric_limits<float>::max()
+            << ", char is signed == " << std::numeric_limits<char>::is_signed
+            << '\n';
 }
