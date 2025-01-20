@@ -6,8 +6,15 @@ bool accept() {
   char answer = 0;
   std::cin >> answer;
 
-  if (answer == 'y') return true;
-  return false;
+  switch (answer) {
+    case 'y':
+      return true;
+    case 'n':
+      return false;
+    default:
+      std::cout << "I'll take that as a no.\n";
+      return false;
+  }
 }
 
 int main() {
